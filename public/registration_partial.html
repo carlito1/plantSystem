@@ -1,0 +1,28 @@
+<div ng-controller="RegistrationController">
+
+    <form ng-submit="register(user)" name="registrationForm">
+        <div class="form-group">
+            <label for="username" class="control-label">Uporabniško ime: </label>
+            <input type="text" name="username" required ng-model="user.username" class="form-control" />
+
+        </div>
+        <div class="form-group" ng-class="{'has-error has-feedback' : registrationForm.repeatPassword.$invalid}">
+            <label for="password" class="control-label">Geslo: </label>
+            <input type="password" name="password" required ng-model="user.password" class="form-control" />
+
+        </div>
+        <div class="form-group" ng-class="{'has-error has-feedback' : registrationForm.repeatPassword.$invalid}">
+            <label for="repeatPassword" class="control-label">Ponovitev gesla: </label>
+            <input type="password" name="repeatPassword" required ng-model="user.repeatPassword" compare-to="user.password" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="email" class="control-label">Email: </label>
+            <input type="email" name="email" required ng-model="user.email" class="form-control" />
+
+        </div>
+        <input type="submit" class="btn btn-success" value="Registracija" ng-disabled="registrationForm.$invalid" />
+    </form>
+
+    <p class="text-danger">{{message}}</p>
+</div>
+<a href="#/login">Prijava</a>
