@@ -1,7 +1,7 @@
 
 html{
   /* Location of the image */
-  background-image: url(../images/tree.jpg);
+  background-image: url(../images/bg.jpg);
 
   /* Background image is centered vertically and horizontally at all times */
   background-position: center center;
@@ -72,6 +72,9 @@ body {
 
 /* Customize container */
 @media (min-width: 768px) {
+    html{
+      background-image: url(../images/bg.jpg);
+    }
     .container {
         max-width: 730px;
     }
