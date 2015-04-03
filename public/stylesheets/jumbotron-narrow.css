@@ -22,6 +22,9 @@ html{
   background-color: #464646;
 
   min-height:100%;
+
+  max-width:100%;
+  min-width:100%;
 }
 /* Space out content a bit */
 body {
