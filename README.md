@@ -1,5 +1,5 @@
 ﻿# SistematikaRastlin
 
-.## Application
-Link to application: [a link](https://herbarij.herokuapp.com/)
+## Application
+Link to application: [Herbarij](https://herbarij.herokuapp.com/)
 
