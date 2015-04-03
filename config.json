@@ -1,6 +1,6 @@
 ﻿{
     "connectionStringLocal": "mongodb://localhost:27017/plantSystem",
     "connectionStringProduction": "mongodb://superuser:TolkoKaplicTolkoLet@ds035617.mongolab.com:35617/plantsystem",
-    "secret": "NikaJeMojaLjubica",
+    "secret": "SecretKey",
     "key": "@h§kŁP=ij{"
 }
