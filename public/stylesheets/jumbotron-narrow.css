@@ -1,4 +1,5 @@
-﻿
+
+
 /* Space out content a bit */
 body {
 
@@ -10,6 +11,7 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -41,9 +43,15 @@ body {
 
 .container {
     background: white;
-    /*opacity: 0.85;*/
+    opacity: 0.85;
     padding: 5px 5px 5px 5px;
-    border-radius: 3px;
+    border-top-left-radius:2px;
+    border-top-right-radius:2px;
+}
+.container:last-of-type
+{
+  border-bottom-right-radius:2px;
+  border-bottom-left-radius:2px;
 }
 
 /* Customize container */
@@ -80,9 +88,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     body {
-      background: none;
-      padding-top: 20px;
-      padding-bottom: 20px;
+      padding: 20px 20px 20px 20px
     }
 
 
@@ -102,4 +108,16 @@ body {
     .jumbotron {
         border-bottom: 0;
     }
+}
+/*
+@media screen and(max-width: 768px)
+{
+
+  body {
+    background: none;
+  }
+  .container
+  {
+    opacity:1.0;
+  }
 }
