@@ -14,19 +14,21 @@ router.post('/', function (req, res) {
         return res.status(400).json({ error: 'Username || password || email not set' });
     }
     else {
-        db.user.insert({ username : username, email : email, password : password }, function (error) { 
+        db.user.insert({ username : username, email : email, password : password }, function (error,user) {
             if (error) {
-                if (error.status !== 'undefined') {
+                if (error.status === 0) {
                     // email or username duplicated
-                    return res.status(409).json({ error: 'Password or email allready exists' });
+                    res.status(409);
                 }
                 else {
-                    return res.status(500).json({ error: 'Database error' });
+                    res.status(500);
                 }
+
+                return res.json(error.error);
             } else {
-                return res.status(200).json(req.body.user);
+                return res.status(200).json(user);
             }
-            
+
         });
     }
 });

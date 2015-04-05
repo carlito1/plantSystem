@@ -95,6 +95,33 @@ var insertNew = function (userId, newPlant, callback) {
 
 
 var insertNewUser = function (newUser, callback) {
+    function SaveUser(error,user)
+    {
+      if (error) {
+          console.log(error);
+          return callback(error);
+      } else {
+        return callback(null,user);
+      }
+    }
+    function CheckUser(error,user)
+    {
+      // Error status 0 : db error
+      // Error status 1 : duplicated user
+      if(error)
+      {
+        console.log(error);
+        return callback({error: 'We are really sorry.', status:0});
+      } else if(user){
+        // Username allready exists
+        return callback({error: 'Username allready exists', status: 1})
+      }
+      else
+      {
+        newuser.save(SaveUser);
+
+      }
+    }
     var newuser = new user({
       username : newUser.username,
       password: encrypt(new Buffer(newUser.password, "utf8")) ,
@@ -102,15 +129,9 @@ var insertNewUser = function (newUser, callback) {
       plants:[]
       });
 
-    newuser.save(function (error) {
-        if (error) {
-            console.log(error);
-            return callback(error);
-        } else {
-          return callback();
-        }
 
-    });
+    user.findOne({username : newUser.username}, CheckUser);
+
 };
 
 var updateUser = function (updatedUser, callback) {
