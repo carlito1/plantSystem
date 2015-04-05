@@ -16,7 +16,7 @@ router.post('/', function (req, res) {
     else {
         db.user.insert({ username : username, email : email, password : password }, function (error,user) {
             if (error) {
-                if (error.status === 0) {
+                if (error.status === 1) {
                     // email or username duplicated
                     res.status(409);
                 }

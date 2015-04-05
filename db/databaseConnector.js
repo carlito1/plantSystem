@@ -1,7 +1,7 @@
 ﻿
 var mongoose = require('mongoose');
 
-var connectionString = require('../config.json').connectionStringProduction;
+var connectionString = require('../config.json').connectionStringLocal;
 
 console.log(connectionString);
 mongoose.connect(connectionString);

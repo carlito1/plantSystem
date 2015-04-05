@@ -3,8 +3,8 @@ var Schema = mongoose.Schema;
 
 
 var plantSchema = new Schema({
-    number : { type: Number, required: true, unique : true },
-    name : { type: String, required: true, unique : true },
+    number : { type: Number, required: true},
+    name : { type: String, required: true},
     latinName : { type: String, required: true },
     place : { type: String, required: true },
     date : { type: String, required: true, default: Date.now },
